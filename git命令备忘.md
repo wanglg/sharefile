@@ -28,6 +28,8 @@ git checkout -b 本地分支名字 origin/远程分支名
 
 查看历史提交 git log
 
+查看所有历史提交 git reflog
+
 以列表形式查看指定文件的历史修改记录。 git blame <file>
 
 忽略工作区未被执行 git add 的文件变更，将其隐藏起来，这样在执行 git commit 时不会被影响  git stash -u -k    
@@ -76,5 +78,3 @@ git log --oneline  // 可以省略``
 git reset HEAD^   // 回退到上一个版本，注意看HEAD后面有个 ^HEAD^ 是回退到上个版本HEAD^^ 是回退到上上个版本HEAD~数字 是回退到数字个版本
 git checkout -- aaa.html
 ```
-
-[https://www.wjx.top/jq/89279224.aspx](web://urllink//https://www.wjx.top/jq/89279224.aspx) 
