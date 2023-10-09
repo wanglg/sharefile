@@ -36,7 +36,15 @@ git checkout -b 本地分支名字 origin/远程分支名
 
  恢复工作区被忽略的文件   git stash pop          
 
+git不使用代理 git config –global –unset http.proxy 
 
+使用git访问github服务器时，若使用代理服务器，需要在git的配置文件中添加代理服务器IP+端口，让git可以正确解析URL。若SSL证书非第三方机构签署，git提示OpenSSL错误时，可以添加临时SSL证书
+
+配置git代理 git config --global  http.proxy http://127.0.0.1:1087  
+
+git config --global  https.proxy http://127.0.0.1:1087
+
+端口号为代理软件配置端口号
 
 ## 标签
 
@@ -78,3 +86,41 @@ git log --oneline  // 可以省略``
 git reset HEAD^   // 回退到上一个版本，注意看HEAD后面有个 ^HEAD^ 是回退到上个版本HEAD^^ 是回退到上上个版本HEAD~数字 是回退到数字个版本
 git checkout -- aaa.html
 ```
+
+## git reset revert checkout
+
+- Reset
+
+```
+git reset --hard commitId 重置到某个提交ID
+reset 后可接三个参数
+–soft – 缓存区和工作目录都不会被改变
+–mixed (默认选项) 缓存区和你指定的提交同步，但工作目录不受影响
+–hard – 缓存区和工作目录都同步到你指定的提交
+git reset --hard origin/master  # 将本地的状态回退到和远程的一样
+```
+
+- revert
+
+  ```
+  通过创建一次新的 commit 来撤销一次 commit 所做出的修改。这种撤销的方式是安全的，因为它并不修改 commitm history。
+  git revert commitId 还原某次提交
+  ```
+
+  
+
+- Checkout
+
+  ```
+  基于指定 commit id 创建分支
+  
+  # 切换到指定提交记录
+  git checkout <commit id>
+  # 创建并切换到新分支
+  git checkout -b <branch>
+  
+  # 检出某一次标签
+  git checkout tagname
+  ```
+
+  
