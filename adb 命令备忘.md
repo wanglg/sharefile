@@ -52,7 +52,7 @@
 50. adb shell pm list packages 列出安装的应用包
 51. adb shell getprop ro.product.brand 获取手机品牌
 29. adb  shell  monkey -p  com.leo.uilib.popupdemo  -v 500  模拟触摸
-29. 
+29. adb shell top 查看进程信息
 
 # Gradlew 命令
 
@@ -80,3 +80,18 @@
             }
         }
 
+## 反编译指令
+
+```xml
+d2j-dex2jar <dexFilePath> -o <outputJarFilePath>
+```
+
+1. /data/local/tcpdump -p -vv -s 0 -i any -w /data/local/capture.pcapng  抓包
+
+ip.dst == 103.192.208.112 and ip.src == 192.168.1.150   过滤抓包
+
+apktool d apk路径
+
+## IDA
+
+alt+t 搜索
