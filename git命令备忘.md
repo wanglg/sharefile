@@ -46,6 +46,12 @@ git config --global  https.proxy http://127.0.0.1:1087
 
 端口号为代理软件配置端口号
 
+查看当前用户的git配置 git config --global --list  
+
+查看系统配置 git config --system --list
+
+查看当前仓库配置 git config --local --list
+
 ## 标签
 
 ```
