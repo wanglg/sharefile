@@ -20,6 +20,8 @@ git checkout -b 本地分支名字 origin/远程分支名
 
 合并分支 git merge dev
 
+合并分支 git merge --no-ff dev 产生新的提交id
+
 把本地分支推到远程   git push origin  branch : branch 
 
 把当前本地分支推到远程名字为v1.1.3  git push --set-upstream origin v1.1.3
@@ -44,7 +46,35 @@ git不使用代理 git config –global –unset http.proxy
 
 git config --global  https.proxy http://127.0.0.1:1087
 
+删除中间文件 git clean -f   查看删除那些文件git clean -f
+
 端口号为代理软件配置端口号
+
+CRLF git config --global core.autocrlf false
+
+git config 信息查看
+
+git config --system --list
+
+git config --global --list
+
+git config --local  --list
+
+git config user.name
+
+#### 修改历史提交信息
+
+git rebase -i  列出 commit 列表
+
+vi 命令把需要修改的commitid 的pick改成edit  :wq保存
+
+git commit --amend 后修改具体的信息  :wq保存
+
+git rebase --continue 继续下一个或git rebase (--skip | --abort) 跳过或退出
+
+
+
+
 
 ## 标签
 
@@ -98,6 +128,7 @@ reset 后可接三个参数
 –mixed (默认选项) 缓存区和你指定的提交同步，但工作目录不受影响
 –hard – 缓存区和工作目录都同步到你指定的提交
 git reset --hard origin/master  # 将本地的状态回退到和远程的一样
+git reset --hard HEAD^ 重置上一次提交
 ```
 
 - revert
