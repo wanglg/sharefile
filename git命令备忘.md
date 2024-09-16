@@ -54,11 +54,11 @@ CRLF git config --global core.autocrlf false
 
 git config 信息查看
 
-git config --system --list
+查看当前用户的git配置 git config --global --list
 
-git config --global --list
+查看系统配置 git config --system --list
 
-git config --local  --list
+查看当前仓库配置 git config --local --list
 
 git config user.name
 
@@ -71,6 +71,8 @@ vi 命令把需要修改的commitid 的pick改成edit  :wq保存
 git commit --amend 后修改具体的信息  :wq保存
 
 git rebase --continue 继续下一个或git rebase (--skip | --abort) 跳过或退出
+
+
 
 
 
